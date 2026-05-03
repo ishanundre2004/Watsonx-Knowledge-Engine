@@ -1,0 +1,13 @@
+# macOS dependencies
+rumps==0.4.0; sys_platform == 'darwin'
+
+# Windows dependencies
+pystray==0.19.5; sys_platform == 'win32'
+pillow==10.2.0; sys_platform == 'win32'
+winotify==1.1.0; sys_platform == 'win32'
+
+# Cross-platform dependencies
+sounddevice==0.5.5
+soundfile==0.13.1
+numpy==2.4.4
+requests==2.33.1

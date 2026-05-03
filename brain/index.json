@@ -1,0 +1,65 @@
+{
+  "notes": {
+    "note_abc123": {
+      "title": "Fly.io is the canonical deployment target",
+      "topics": [
+        "topic_deployment"
+      ],
+      "type": "decision",
+      "freshness_score": 1.0,
+      "related_notes": [],
+      "preview": "Deployment target is Fly.io; use `fly deploy` for shipping."
+    },
+    "note_abc456": {
+      "title": "Token lifetimes: 25 min access, 7 day refresh",
+      "topics": [
+        "topic_authentication"
+      ],
+      "type": "decision",
+      "freshness_score": 1.0,
+      "related_notes": [],
+      "preview": "Access tokens expire in 25 minutes; refresh tokens expire in 7 days."
+    }
+  },
+  "topics": {
+    "topic_deployment": {
+      "title": "Deployment",
+      "description": "Deployment targets, processes, and best practices",
+      "note_ids": ["note_abc123"],
+      "coverage_score": 0.5,
+      "subtopics": []
+    },
+    "topic_authentication": {
+      "title": "Authentication",
+      "description": "Authentication mechanisms, token management, and compliance",
+      "note_ids": ["note_abc456"],
+      "coverage_score": 0.5,
+      "subtopics": []
+    }
+  },
+  "edges": [
+    {
+      "from": "note_abc123",
+      "to": "topic:topic_deployment",
+      "type": "belongs_to"
+    },
+    {
+      "from": "note_abc123",
+      "to": "topic_deployment",
+      "type": "note_to_topic",
+      "strength": 1.0
+    },
+    {
+      "from": "note_abc456",
+      "to": "topic:topic_authentication",
+      "type": "belongs_to"
+    },
+    {
+      "from": "note_abc456",
+      "to": "topic_authentication",
+      "type": "belongs_to",
+      "strength": 1.0
+    }
+  ],
+  "updated_at": "2026-05-03T05:12:43.869349Z"
+}
