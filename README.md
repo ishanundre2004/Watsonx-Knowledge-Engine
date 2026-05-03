@@ -235,8 +235,8 @@ Requires Python 3.11+ and Node.js 18+. macOS required for the menu bar app; web 
 ### 1. Clone & configure
 
 ```bash
-git clone https://github.com/your-username/unscatter
-cd unscatter
+git clone https://github.com/your-username/Watsonx-Knowledge-Engine
+cd Watsonx-Knowledge-Engine
 
 cp .env.example .env
 # Edit .env and add your API keys

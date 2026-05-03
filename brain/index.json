@@ -19,20 +19,41 @@
       "freshness_score": 1.0,
       "related_notes": [],
       "preview": "Access tokens expire in 25 minutes; refresh tokens expire in 7 days."
+    },
+    "note_abc789": {
+      "title": "pgvector chosen for similarity search",
+      "topics": [
+        "topic_similarity_search"
+      ],
+      "type": "decision",
+      "freshness_score": 1.0,
+      "related_notes": [],
+      "preview": "pgvector selected for similarity search despite FAISS usage elsewhere."
     }
   },
   "topics": {
     "topic_deployment": {
       "title": "Deployment",
       "description": "Deployment targets, processes, and best practices",
-      "note_ids": ["note_abc123"],
+      "note_ids": [
+        "note_abc123"
+      ],
       "coverage_score": 0.5,
       "subtopics": []
     },
     "topic_authentication": {
       "title": "Authentication",
       "description": "Authentication mechanisms, token management, and compliance",
-      "note_ids": ["note_abc456"],
+      "note_ids": [
+        "note_abc456"
+      ],
+      "coverage_score": 0.5,
+      "subtopics": []
+    },
+    "topic_similarity_search": {
+      "title": "Similarity Search",
+      "description": "Similarity search methods, libraries, and best practices",
+      "note_ids": [],
       "coverage_score": 0.5,
       "subtopics": []
     }
@@ -59,7 +80,18 @@
       "to": "topic_authentication",
       "type": "belongs_to",
       "strength": 1.0
+    },
+    {
+      "from": "note_abc789",
+      "to": "topic:topic_similarity_search",
+      "type": "belongs_to"
+    },
+    {
+      "from": "note_abc789",
+      "to": "topic_similarity_search",
+      "type": "belongs_to",
+      "strength": 1.0
     }
   ],
-  "updated_at": "2026-05-03T05:12:43.869349Z"
+  "updated_at": "2026-05-03T09:08:57.482035Z"
 }
