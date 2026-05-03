@@ -2,7 +2,7 @@
   <img src="assets/logo-unscatter-final.png" alt="Unscatter" width="180" />
 </p>
 
-<h1 align="center">Unscatter</h1>
+<h1 align="center">Watsonx-Knowledge-Engine</h1>
 
 <p align="center">
   <strong>Your team's knowledge, finally organized. Zero discipline required.</strong>
@@ -15,15 +15,15 @@
 
 ---
 
-![Unscatter demo](assets/hero-video.gif)
+![Watsonx-Knowledge-Engine demo](assets/hero-video.gif)
 
 ---
 
-## Why Unscatter?
+## Why Watsonx-Knowledge-Engine?
 
 Most team knowledge lives in Slack threads, people's heads, and half-finished Notion docs nobody reads. Documentation tools assume you'll sit down and write. You won't.
 
-There are four taxes that kill knowledge sharing: **discipline, writing, structure, and maintenance**. Every existing tool asks you to pay at least two of them. **Unscatter charges zero.**
+There are four taxes that kill knowledge sharing: **discipline, writing, structure, and maintenance**. Every existing tool asks you to pay at least two of them. **Watsonx-Knowledge-Engine charges zero.**
 
 Speak for 15 seconds from your menu bar. That's it. WatsonxAI handles the rest — deduplication, linking, organization, freshness tracking — while you stay in your flow.
 
@@ -60,14 +60,14 @@ The hero feature. A native macOS menu bar app (🧠 icon) lets you capture from 
 1. Click 🧠 → **Start Voice Capture** (icon turns 🔴)
 2. Speak for 15 seconds
 3. Click → **Stop & Ingest Voice**
-4. Native macOS notification: *"Unscatter: Created 1 note about pgvector migration"*
+4. Native macOS notification: *"Watsonx-Knowledge-Engine: Created 1 note about pgvector migration"*
 
 **Screen recording:**
 1. Click 🧠 → **Start Screen Recording** (icon turns 📹)
 2. Record your screen — show the thing, talk through it
 3. Click → **Stop Screen Recording**
 4. A dialog appears: **"WHAT IS THE CONTEXT OF THIS SCREEN RECORDING?"** — type a sentence
-5. Unscatter transcribes your narration + uses your context to ingest a structured note
+5. Watsonx-Knowledge-Engine transcribes your narration + uses your context to ingest a structured note
 
 Both modes require no browser. The brain grows from wherever you are.
 
@@ -109,9 +109,8 @@ list_topics()
 
 ![MCP in WatsonxAI Desktop](assets/mcp-WatsonxAI-demo.gif)
 
-Enable it in WatsonxAI Desktop under **+ → Connectors → unscatter**:
+Enable it in WatsonxAI Desktop under **+ → Connectors → Watsonx-Knowledge-Engine**:
 
-![Enable MCP in WatsonxAI Desktop](assets/how-to-enable-mcp.png)
 
 ---
 
@@ -212,7 +211,7 @@ Every note is a markdown file with structured frontmatter (`id`, `title`, `type`
 |---|---|
 | Backend | FastAPI + Python 3.11 |
 | AI | IBM Watson AI |
-| Transcription | Groq Whisper (whisper-large-v3-turbo) |
+| Transcription | IBM Watson Speech to Text |
 | Frontend | React + Vite + shadcn/ui (Luma, dark) |
 | Graph | react-force-graph-2d |
 | Menu bar | rumps + sounddevice |
@@ -226,7 +225,6 @@ Every note is a markdown file with structured frontmatter (`id`, `title`, `type`
 
 ### Prerequisites
 - An [IBM Watson API key](https://cloud.ibm.com/catalog/services/watson-machine-learning)
-- A [Groq API key](https://console.groq.com/) (free tier is fine)
 
 ### Option A — Docker (recommended)
 
@@ -331,13 +329,11 @@ Add to `~/Library/Application Support/WatsonxAI/WatsonxAI_desktop_config.json`:
 ```json
 {
   "mcpServers": {
-    "unscatter": {
-      "command": "/absolute/path/to/unscatter/venv/bin/python",
-      "args": ["/absolute/path/to/unscatter/mcp_server/server.py"],
+    "Watsonx-Knowledge-Engine": {
+      "command": "/absolute/path/to/Watsonx-Knowledge-Engine/venv/bin/python",
+      "args": ["/absolute/path/to/Watsonx-Knowledge-Engine/mcp_server/server.py"],
       "env": {
-        "ANTHROPIC_API_KEY": "sk-ant-...",
-        "GROQ_API_KEY": "gsk_...",
-        "BRAIN_PATH": "/absolute/path/to/unscatter/brain"
+        "BRAIN_PATH": "/absolute/path/to/Watsonx-Knowledge-Engine/brain"
       }
     }
   }
@@ -370,7 +366,7 @@ Restart WatsonxAI Desktop. The Unscatter tools appear under **+ → Connectors �
 ## Project Structure
 
 ```
-unscatter/
+Watsonx-Knowledge-Engine/
 ├── backend/
 │   ├── main.py              # FastAPI app
 │   ├── config.py            # Env loading
