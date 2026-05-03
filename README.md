@@ -226,30 +226,9 @@ Every note is a markdown file with structured frontmatter (`id`, `title`, `type`
 ### Prerequisites
 - An [IBM Watson API key](https://cloud.ibm.com/catalog/services/watson-machine-learning)
 
-### Option A — Docker (recommended)
 
-Requires [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 
-```bash
-git clone https://github.com/your-username/unscatter
-cd unscatter
-
-cp .env.example .env
-# Edit .env — add WATSON_API_KEY, WATSON_DEPLOYMENT_URL and GROQ_API_KEY
-
-docker compose up --build
-```
-
-- Backend: [http://127.0.0.1:8000](http://127.0.0.1:8000)
-- Frontend: [http://localhost:5173](http://localhost:5173)
-
-Your `brain/` directory is mounted as a volume — notes persist across restarts.
-
-> **Menu bar app** runs outside Docker (macOS only). See Option B step 4.
-
----
-
-### Option B — Manual Setup
+### Manual Setup
 
 Requires Python 3.11+ and Node.js 18+. macOS required for the menu bar app; web UI works on any OS.
 
@@ -267,7 +246,6 @@ cp .env.example .env
 ```
 WATSON_API_KEY=your_watson_api_key
 WATSON_DEPLOYMENT_URL=your_watson_deployment_url
-GROQ_API_KEY=gsk_...
 BRAIN_PATH=./brain
 ```
 
